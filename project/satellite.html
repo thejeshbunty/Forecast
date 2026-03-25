@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Satellite Map</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<style>
+#satellitePage {
+    height: 100vh;
+    overflow: hidden;
+}
+#satellitePage .layout {
+    display: flex;
+    height: 100vh;
+}
+#satellitePage .content {
+    flex: 1;
+    padding: 0;
+    height: 100vh;
+}
+#satellitePage #map {
+    width: 100%;
+    height: 100vh;
+}
+</style>
+
+</head>
+
+<body id="satellitePage">
+
+<div class="layout">
+
+<aside class="sidebar">
+<h2>IMD Weather Portal</h2>
+<ul>
+<li><a href="index.html">Dashboard</a></li>
+<li><a href="analytics.html">Atmospheric Trends</a></li>
+<li><a href="rain.html">Rain Analysis</a></li>
+<li><a href="wind.html">Wind Analysis</a></li>
+<li><a href="satellite.html">Satellite</a></li>
+<li><a href="data.html">Data Export</a></li>
+<li><a href="climate.html">Climate Trends</a></li>
+</ul>
+</aside>
+
+<main class="content">
+<div id="map"></div>
+</main>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

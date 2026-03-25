@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Data Export</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body id="dataPage">
+
+<div class="layout">
+
+<aside class="sidebar">
+<h2>IMD Weather Portal</h2>
+<ul>
+<li><a href="index.html">Dashboard</a></li>
+<li><a href="analytics.html">Atmospheric Trends</a></li>
+<li><a href="rain.html">Rain Analysis</a></li>
+<li><a href="wind.html">Wind Analysis</a></li>
+<li><a href="satellite.html">Satellite</a></li>
+<li><a href="data.html">Data Export</a></li>
+<li><a href="climate.html">Climate Trends</a></li>
+</ul>
+</aside>
+
+<main class="content">
+<h2>Export Weather Data</h2>
+<button onclick="exportForecastCSV()">Download 7-Day Forecast</button>
+
+<button onclick="exportFullReport()">Download PDF Report</button>
+</main>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

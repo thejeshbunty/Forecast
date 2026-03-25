@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Weather Dashboard</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<div class="layout">
+
+<aside class="sidebar">
+<h2>Weather System</h2>
+<ul>
+<li><a href="index.html">Dashboard</a></li>
+<li><a href="analytics.html">Atmospheric Trends</a></li>
+<li><a href="rain.html">Rain Analysis</a></li>
+<li><a href="wind.html">Wind Analysis</a></li>
+<li><a href="satellite.html">Satellite</a></li>
+<li><a href="data.html">Data Export</a></li>
+<li><a href="climate.html">Climate Trends</a></li>
+</ul>
+</aside>
+
+<main class="content">
+
+<div class="search-bar">
+  <div class="search-wrapper">
+    <input type="text" id="cityInput" placeholder="Search city..." autocomplete="off">
+    <div id="suggestions" class="suggestions-box"></div>
+  </div>
+  <button onclick="searchCity()">Search</button>
+  <button onclick="getLocationWeather()">📍</button>
+</div>
+
+<div id="alertBanner"></div>   <!-- ✅ ADD THIS -->
+
+<h2 id="locationName">--</h2>
+
+<div class="card big">
+<h1 id="temperature">--°C</h1>
+<p>Feels like: <span id="feelsLike">--</span></p>
+</div>
+
+<div class="card-grid">
+<div class="card">Humidity<br><strong id="humidity">--</strong></div>
+<div class="card">Pressure<br><strong id="pressure">--</strong></div>
+<div class="card">Wind<br><strong id="wind">--</strong></div>
+</div>
+
+<div class="card">
+<h2>7-Day Forecast</h2>
+<div id="forecastContainer" class="forecast-grid"></div>
+</div>
+
+</main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

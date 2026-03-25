@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Climate Trends</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<div class="layout">
+
+<aside class="sidebar">
+<h2>Weather System</h2>
+<ul>
+<li><a href="index.html">Dashboard</a></li>
+<li><a href="analytics.html">Atmospheric Trends</a></li>
+<li><a href="rain.html">Rain Analysis</a></li>
+<li><a href="wind.html">Wind Analysis</a></li>
+<li><a href="satellite.html">Satellite</a></li>
+<li><a href="data.html">Data</a></li>
+<li><a href="climate.html">Climate Trends</a></li>
+</ul>
+</aside>
+
+<main class="content">
+
+<div class="search-bar">
+  <div class="search-wrapper">
+    <input type="text" id="cityInput" placeholder="Search city..." autocomplete="off">
+    <div id="suggestions" class="suggestions-box"></div>
+  </div>
+  <button onclick="searchCity()">Search</button>
+  <button onclick="getLocationWeather()">📍</button>
+</div>
+
+<h2>Temperature, Humidity & Pressure</h2>
+<canvas id="climateChart"></canvas>
+
+</main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

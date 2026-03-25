@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Atmospheric Trends</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+</head>
+<body>
+
+<div class="layout">
+<aside class="sidebar">
+<h2>Weather System</h2>
+<ul>
+<li><a href="index.html">Dashboard</a></li>
+<li><a href="analytics.html">Atmospheric Trends</a></li>
+<li><a href="rain.html">Rain Analysis</a></li>
+<li><a href="wind.html">Wind Analysis</a></li>
+<li><a href="satellite.html">Satellite</a></li>
+<li><a href="data.html">Data Export</a></li>
+<li><a href="climate.html">Climate Trends</a></li>
+</ul>
+</aside>
+
+<main class="content">
+
+<!-- ===== SEARCH BAR ===== -->
+<div class="search-bar">
+  <div class="search-wrapper">
+    <input type="text" id="cityInput" placeholder="Search city..." autocomplete="off">
+    <div id="suggestions" class="suggestions-box"></div>
+  </div>
+
+  <button onclick="searchCity()">Search</button>
+  <button onclick="getLocationWeather()">📍</button>
+</div>
+
+
+<!-- ===== CONTROL PANEL ===== -->
+<div class="control-panel">
+
+  <select id="parameterSelect" onchange="changeParameter()">
+    <option value="temp">Temperature</option>
+    <option value="rain">Rain</option>
+    <option value="wind">Wind</option>
+    <option value="climate">Climate</option>
+  </select>
+
+  <select id="cycleSelect" onchange="changeCycle()">
+    <option value="0">00 UTC</option>
+    <option value="6">06 UTC</option>
+    <option value="12">12 UTC</option>
+    <option value="18">18 UTC</option>
+  </select>
+
+</div>
+
+
+<!-- ===== TIME SLIDER ===== -->
+<div class="time-slider">
+  <input type="range" min="0" max="23" value="0" id="timeSlider" oninput="updateTime()">
+  <span id="timeLabel">Hour: 0</span>
+</div>
+
+
+<!-- ===== ACTION BUTTONS ===== -->
+<div class="action-buttons">
+  <button onclick="downloadChart('multiChart','temperature_chart')">
+    Download Temp Chart
+  </button>
+
+  <button onclick="exportFullReport()">
+    Download Full Report
+  </button>
+</div>
+
+
+<h2 id="locationName">--</h2>
+
+<div class="card">
+  <canvas id="multiChart"></canvas>
+  <canvas id="rainChart" style="display:none;"></canvas>
+  <canvas id="windChart" style="display:none;"></canvas>
+  <canvas id="climateChart" style="display:none;"></canvas>
+</div>
+
+</main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
